@@ -356,7 +356,9 @@ class _SecondPageState extends State<SecondPage> {
                                               Navigator.of(context).push(
                                                   MaterialPageRoute(
                                                       builder: (context) {
-                                                return ThirdPage();
+                                                return ThirdPage(jsonDecode(snapshot.data!.body.toString())[index]['StudentImage'],
+                                                    jsonDecode(snapshot.data!.body.toString())[index]['StudentName']
+                                                );
                                               }));
                                             },
                                             child: Column(
