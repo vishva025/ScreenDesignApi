@@ -2,7 +2,17 @@ import 'package:api_screen_design/Second_Page.dart';
 import 'package:flutter/material.dart';
 
 
-class ThirdPage extends StatelessWidget {
+class ThirdPage extends StatefulWidget {
+
+  String im = '',nm='';
+
+  ThirdPage(this.im,this.nm);
+
+  @override
+  State<ThirdPage> createState() => _ThirdPageState();
+}
+
+class _ThirdPageState extends State<ThirdPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,8 +21,7 @@ class ThirdPage extends StatelessWidget {
         children: [
           Container(
             child: Image(
-              image: NetworkImage(
-                  'https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712__340.jpg'),
+              image: NetworkImage(widget.im),
               fit: BoxFit.cover,
             ),
           ),
@@ -97,7 +106,7 @@ class ThirdPage extends StatelessWidget {
                                                                   top: 13,
                                                                   left: 5),
                                                               child: Text(
-                                                                'Northern Hills',
+                                                                widget.nm,
                                                                 style: TextStyle(
                                                                   fontWeight:
                                                                   FontWeight
